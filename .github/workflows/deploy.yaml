@@ -13,9 +13,6 @@ jobs:
       - run: docker build -t iulianbuzdugan/docker-react -f Dockerfile.dev .
       - run: docker run -e CI=true iulianbuzdugan/docker-react npm test
 
-      - name: Checkout source code
-        uses: actions/checkout@v2
-
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
 
